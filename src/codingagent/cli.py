@@ -11,7 +11,6 @@ from codingagent.config import PROJECT_ROOT, Settings
 from codingagent.context import build_context_builder
 from codingagent.dataset import DatasetError, QuixBugsDataset
 from codingagent.domain.enums import Strategy
-from codingagent.domain.models import Problem
 from codingagent.eval.harness import EvaluationHarness
 from codingagent.eval.report import write_reports
 from codingagent.eval.runner import ExperimentRunner
