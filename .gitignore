@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+build/
+dist/
+
+# 运行产物
+var/
+data/quixbugs/
+data/raw/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# 本地配置与密钥
+.env
+.env.local

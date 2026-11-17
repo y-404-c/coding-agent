@@ -1,0 +1,43 @@
+# 全局默认配置。环境变量（前缀 CA_，嵌套用 __）优先级更高。
+llm:
+  provider: openai_compatible   # openai_compatible | scripted
+  base_url: https://api.deepseek.com/v1
+  api_key: ""
+  model: deepseek-chat
+  temperature: 0.0
+  max_tokens: 2048
+  timeout_s: 60.0
+  max_retries: 3
+  json_mode: true
+
+agent:
+  max_steps: 10          # 步数上限（独立停止条件 1）
+  token_budget: 15000    # token 预算（独立停止条件 2）
+  max_format_retries: 2  # 结构化输出解析失败的回喂上限
+  observation_max_chars: 4000
+  context_max_chars: 12000
+
+# 自纠正：S0-S3 用原始报错回喂做对照，S4 用结构化回喂（第 6 节）
+correction:
+  max_retries: 2
+  feedback_style:
+    S0: raw
+    S1: raw
+    S2: raw
+    S3: raw
+    S4: structured
+
+sandbox:
+  timeout_s: 10.0        # QuixBugs 是微型程序；10s 足够区分“慢”和“死循环”
+  max_output_chars: 8000
+
+dataset:
+  root: data/quixbugs
+  source_url: https://codeload.github.com/jkoppel/QuixBugs/zip/refs/heads/master
+  auto_fetch: true
+
+eval:
+  strategies: [S0, S1, S2, S3, S4]
+  repeats: 3
+  db_path: var/runs.db
+  reports_dir: reports
