@@ -121,6 +121,10 @@ class Settings(BaseSettings):
         data: dict[str, Any] = {}
         if config_path.exists():
             data = yaml.safe_load(config_path.read_text(encoding="utf-8")) or {}
+        llm_data = data.get("llm")
+        if isinstance(llm_data, dict) and not llm_data.get("api_key"):
+            # 空密钥只是 YAML 占位符，不能让 init source 覆盖环境变量或 .env。
+            llm_data.pop("api_key", None)
         settings = cls(**data)
         settings.resolve_paths()
         return settings
