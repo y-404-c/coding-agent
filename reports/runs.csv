@@ -1,0 +1,6 @@
+run_id,strategy,problem_id,repeat_index,passed,error_category,total_tokens,total_steps,attempts,final_stop_reason,localization_step,final_patch_chars
+infra-bitcount-S2-0-1795020751.35926,S2,bitcount,0,0,env_error,0,0,1,,,0
+infra-breadth_first_search-S2-0-1795020751.613406,S2,breadth_first_search,0,0,env_error,0,0,1,,,0
+infra-bucketsort-S2-0-1795020751.988431,S2,bucketsort,0,0,env_error,0,0,1,,,0
+infra-depth_first_search-S2-0-1795020752.289014,S2,depth_first_search,0,0,env_error,0,0,1,,,0
+infra-detect_cycle-S2-0-1795020752.534804,S2,detect_cycle,0,0,env_error,0,0,1,,,0

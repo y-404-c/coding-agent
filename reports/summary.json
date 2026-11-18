@@ -1,0 +1,19 @@
+{
+  "model": "deepseek-chat",
+  "config_hash": "3b31f116dd89814ee9f90637c01f184c0f3418f28fa1df4b225ce1c0eced88c3",
+  "metrics": {
+    "S2": {
+      "runs": 5,
+      "pass_at_1": 0.0,
+      "pass_at_2": 0.0,
+      "avg_tokens": 0.0,
+      "avg_steps": 0.0,
+      "localization_top1": null,
+      "localization_top3": null,
+      "degraded_runs": 5,
+      "failure_distribution": {
+        "env_error": 5
+      }
+    }
+  }
+}
