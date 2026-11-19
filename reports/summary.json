@@ -1,19 +1,61 @@
 {
-  "model": "deepseek-chat",
-  "config_hash": "3b31f116dd89814ee9f90637c01f184c0f3418f28fa1df4b225ce1c0eced88c3",
+  "model": "qwen3.8-flash",
+  "config_hash": "9ae68d09d4aa54d1e954a06befbc1892bd816e3a7d042671e6d65d4103180665",
   "metrics": {
+    "S0": {
+      "runs": 120,
+      "pass_at_1": 0.9833333333333333,
+      "pass_at_2": 1.0,
+      "avg_tokens": 5266.725,
+      "avg_steps": 2.908333333333333,
+      "localization_top1": 0.975,
+      "localization_top3": 1.0,
+      "degraded_runs": 2,
+      "failure_distribution": {}
+    },
+    "S1": {
+      "runs": 120,
+      "pass_at_1": 1.0,
+      "pass_at_2": 1.0,
+      "avg_tokens": 5255.191666666667,
+      "avg_steps": 3.075,
+      "localization_top1": 0.9833333333333333,
+      "localization_top3": 1.0,
+      "degraded_runs": 0,
+      "failure_distribution": {}
+    },
     "S2": {
-      "runs": 5,
-      "pass_at_1": 0.0,
-      "pass_at_2": 0.0,
-      "avg_tokens": 0.0,
-      "avg_steps": 0.0,
-      "localization_top1": null,
-      "localization_top3": null,
-      "degraded_runs": 5,
-      "failure_distribution": {
-        "env_error": 5
-      }
+      "runs": 120,
+      "pass_at_1": 1.0,
+      "pass_at_2": 1.0,
+      "avg_tokens": 6042.0,
+      "avg_steps": 2.975,
+      "localization_top1": 0.9916666666666667,
+      "localization_top3": 1.0,
+      "degraded_runs": 0,
+      "failure_distribution": {}
+    },
+    "S3": {
+      "runs": 120,
+      "pass_at_1": 0.9833333333333333,
+      "pass_at_2": 1.0,
+      "avg_tokens": 8370.475,
+      "avg_steps": 3.05,
+      "localization_top1": 1.0,
+      "localization_top3": 1.0,
+      "degraded_runs": 2,
+      "failure_distribution": {}
+    },
+    "S4": {
+      "runs": 120,
+      "pass_at_1": 1.0,
+      "pass_at_2": 1.0,
+      "avg_tokens": 8079.491666666667,
+      "avg_steps": 2.95,
+      "localization_top1": 1.0,
+      "localization_top3": 1.0,
+      "degraded_runs": 0,
+      "failure_distribution": {}
     }
   }
 }

@@ -1,9 +1,10 @@
 # 全局默认配置。环境变量（前缀 CA_，嵌套用 __）优先级更高。
 llm:
   provider: openai_compatible   # openai_compatible | scripted
-  base_url: https://api.deepseek.com/v1
+  # 与 .env 保持一致：YAML 的非空值会覆盖 .env，故此处必须指向同一端点
+  base_url: https://dashscope.aliyuncs.com/compatible-mode/v1
   api_key: ""
-  model: deepseek-chat
+  model: qwen3.8-flash
   temperature: 0.0
   max_tokens: 2048
   timeout_s: 60.0

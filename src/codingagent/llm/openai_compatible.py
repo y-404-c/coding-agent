@@ -76,6 +76,14 @@ class OpenAICompatibleClient:
             except (httpx.TransportError, httpx.TimeoutException) as exc:
                 last_error = exc
                 self._sleep(attempt)
+            except httpx.HTTPStatusError as exc:
+                # 网关偶发的 4xx/5xx（如 408、409、425、非标准码）可能被 raise_for_status
+                # 抛到这里；这类是暂时性的，重试可救回一个本会降级的数据点。
+                # 确定性错误（鉴权/路径/参数错）重试无用，直接放弃。
+                if exc.response.status_code in {400, 401, 403, 404, 422}:
+                    raise
+                last_error = exc
+                self._sleep(attempt)
         raise LLMError(f"LLM 调用失败（已重试 {self._settings.max_retries} 次）: {last_error}")
 
     @staticmethod
